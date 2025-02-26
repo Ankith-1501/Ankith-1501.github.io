@@ -3,74 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ashwitha & Dhiraj's Wedding Invitation</title>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+    <title>Wedding Invitation</title>
     <style>
         body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Garamond', serif;
+            background: url('https://source.unsplash.com/1600x900/?indian,wedding') no-repeat center center fixed;
+            background-size: cover;
+            color: #800000;
             text-align: center;
-            font-family: 'Dancing Script', cursive;
-            background: url('https://source.unsplash.com/1600x900/?wedding,flowers') no-repeat center center/cover;
-            color: white;
-            padding: 20px;
         }
         .container {
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(255, 248, 220, 0.9);
             padding: 20px;
+            margin: 50px auto;
+            width: 80%;
             border-radius: 15px;
-            display: inline-block;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
         }
-        h1, h2 {
-            font-size: 2.5em;
+        h1 {
+            font-size: 36px;
+            color: #B22222;
         }
-        #countdown {
-            font-size: 1.8em;
-            margin: 20px 0;
+        .divider {
+            width: 50%;
+            height: 3px;
+            background: #B22222;
+            margin: 10px auto;
         }
-        .btn {
-            display: inline-block;
-            background: #ff4081;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 1.2em;
+        .details {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .rsvp {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #D2691E;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>You're Invited to</h1>
-        <h2>Ashwitha & Dhiraj's Wedding</h2>
-        <p>Join us on <strong>Friday, 9th May 2025</strong> at</p>
-        <p><em>Mulkadi Shri Durgaparamneshwari Temple, Kodu, Shirva</em></p>
-        <p>at <strong>10:35 AM</strong> (Shubha Lagnam)</p>
-        <p><strong>Wedding Reception:</strong> Grameena Buntara Sabha Bhavana, Kunthala Nagar, Nellikatte from 12:00 noon onwards.</p>
-        
-        <div id="countdown"></div>
-        <a href="#" class="btn">RSVP Now</a>
+        <h1>Wedding Invitation</h1>
+        <div class="divider"></div>
+        <p class="details">You are cordially invited to the wedding of</p>
+        <h2>Chi. Sou. Ashwitha</h2>
+        <p>Granddaughter of Sri Sundar Shetty & Late Subbu Shetty</p>
+        <h3>With</h3>
+        <h2>Chi. Dhiraj</h2>
+        <p>Grandson of Late Ananda Shetty & Smt. Jayanthi Shetty</p>
+        <div class="divider"></div>
+        <p class="details">📅 Date: <b>9th May 2025</b></p>
+        <p class="details">📍 Venue: <b>Mulkadi Shri Durgaparamneshwari Temple, Kodu, Shirva</b></p>
+        <p class="details">🕰️ Time: <b>10:35 AM (Shubha Lagnam)</b></p>
+        <p class="details">🎉 Reception: <b>Grameena Buntara Sabha Bhavana, Kunthala Nagar</b></p>
+        <div class="divider"></div>
+        <p class="rsvp">We look forward to celebrating with you!<br> - The Shetty Family</p>
     </div>
-    
-    <script>
-        function countdown() {
-            const weddingDate = new Date("May 9, 2025 10:35:00").getTime();
-            const x = setInterval(function() {
-                const now = new Date().getTime();
-                const distance = weddingDate - now;
-                
-                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-                
-                document.getElementById("countdown").innerHTML = `💍 ${days}d ${hours}h ${minutes}m ${seconds}s left`;
-                
-                if (distance < 0) {
-                    clearInterval(x);
-                    document.getElementById("countdown").innerHTML = "🎉 Wedding Day is Here! 🎉";
-                }
-            }, 1000);
-        }
-        countdown();
-    </script>
 </body>
 </html>
