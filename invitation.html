@@ -13,6 +13,7 @@
             background-size: cover;
             color: #6D2404;
             text-align: center;
+            animation: fadeIn 2s ease-in;
         }
         .container {
             background: rgba(255, 239, 186, 0.9);
@@ -22,57 +23,84 @@
             border-radius: 20px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
             border: 5px solid #A52A2A;
+            animation: slideIn 1.5s ease-in-out;
         }
         h1 {
             font-size: 42px;
             color: #8B0000;
             font-family: 'Georgia', serif;
+            animation: popIn 1.5s ease-in-out;
         }
         .divider {
             width: 60%;
             height: 4px;
             background: #A52A2A;
             margin: 15px auto;
+            animation: expand 1.5s ease-in-out;
         }
         .details {
             font-size: 22px;
             font-weight: bold;
             font-style: italic;
+            animation: fadeIn 2s ease-in;
         }
         .rsvp {
             margin-top: 25px;
             font-size: 20px;
             color: #8B4513;
             font-weight: bold;
+            animation: fadeInUp 2s ease-in;
         }
         .highlight {
             font-size: 26px;
             color: #B22222;
             font-weight: bold;
+            animation: bounce 2s infinite;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes popIn {
+            0% { transform: scale(0.5); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        @keyframes expand {
+            from { width: 0; }
+            to { width: 60%; }
+        }
+        @keyframes fadeInUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>💐 Wedding Invitation 💐</h1>
+        <h1>🎊 Wedding Invitation 🎊</h1>
         <div class="divider"></div>
         <p class="details">With the blessings of our elders, we invite you to join us in celebrating the sacred union of</p>
-        <h2 class="highlight">Chi. Sou. Ashwitha</h2>
+        <h2 class="highlight">💖 Chi. Sou. Ashwitha 💖</h2>
         <p>Daughter of Sri Vishwanath Shetty & Smt. Lalitha Shetty</p>
-        <p>Granddaughter of Sri Sundar Shetty & Late Subbu Shetty</p>
         <h3>With</h3>
-        <h2 class="highlight">Chi. Dhiraj</h2>
+        <h2 class="highlight">💞 Chi. Dhiraj 💞</h2>
         <p>Son of Sri Raghunath Shetty & Smt. Shobha Shetty</p>
-        <p>Grandson of Late Ananda Shetty & Smt. Jayanthi Shetty</p>
         <div class="divider"></div>
         <p class="details">📅 Date: <b>9th May 2025</b></p>
         <p class="details">📍 Venue: <b>Mulkadi Shri Durgaparamneshwari Temple, Kodu, Shirva</b></p>
         <p class="details">🕰️ Muhurtham: <b>10:35 AM (Shubha Lagnam)</b></p>
         <p class="details">🎉 Reception: <b>Grameena Buntara Sabha Bhavana, Kunthala Nagar</b></p>
-        <p class="details">🍽️ Sumptuous traditional feast follows</p>
+        <p class="details">🍽️ Sumptuous traditional feast follows 🍛</p>
         <div class="divider"></div>
         <p class="rsvp">We seek your presence and blessings on this joyous occasion.<br> - The Shetty Family 🙏</p>
     </div>
 </body>
 </html>
-
