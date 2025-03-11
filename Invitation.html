@@ -5,45 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Animated Invitation</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=YourFont&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&display=swap');
         body {
-            font-family: 'YourFont', sans-serif;
+            font-family: 'Playfair Display', serif;
             text-align: center;
-            background: #f8f9fa;
+            background: #f4e9dc;
             padding: 20px;
         }
         .invitation {
             max-width: 600px;
             margin: auto;
             padding: 20px;
-            background: white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             border-radius: 10px;
+            border: 5px solid #8B5E3B;
             opacity: 0;
             animation: fadeIn 2s ease-in forwards;
         }
         .title {
-            font-size: 2em;
-            font-weight: bold;
-            animation: slideIn 2s ease-in-out;
+            font-size: 2.5em;
+            font-family: 'Great Vibes', cursive;
+            color: #8B5E3B;
+            animation: fadeSlideIn 2s ease-in-out;
         }
         .venue {
-            font-size: 1.5em;
-            color: #555;
+            font-size: 1.8em;
+            color: #5A3E2B;
+            font-weight: bold;
             animation: fadeIn 3s ease-in-out;
+        }
+        .details {
+            font-size: 1.2em;
+            color: #333;
+            animation: fadeIn 4s ease-in-out;
         }
         .image {
             width: 100%;
             max-width: 500px;
             margin-top: 20px;
+            border-radius: 10px;
             animation: zoomIn 2s ease-in-out;
         }
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
-        @keyframes slideIn {
-            from { transform: translateY(-30px); opacity: 0; }
+        @keyframes fadeSlideIn {
+            from { transform: translateY(-20px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
         }
         @keyframes zoomIn {
@@ -54,8 +63,9 @@
 </head>
 <body>
     <div class="invitation">
-        <h1 class="title">Invitation</h1>
-        <p class="venue">VENUE: [Your Venue Details]</p>
+        <h1 class="title">You're Invited!</h1>
+        <p class="venue">Venue: [Your Venue Details]</p>
+        <p class="details">Join us for a special occasion filled with joy and celebration.</p>
         <img src="your-image.jpg" alt="Invitation Image" class="image">
     </div>
 </body>
