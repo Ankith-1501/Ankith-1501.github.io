@@ -40,31 +40,15 @@
             width: 90%;
             max-width: 600px;
             margin: 20px auto;
-            background-color: rgba(255, 255, 255, 0.9);
-            border-radius: 30px 30px 30px 30px;
+            background-image: url('/api/placeholder/600/800'); /* Will be replaced with your floral image */
+            background-size: cover;
+            background-position: center;
+            border-radius: 30px;
             border: 1px solid #d4c4e9;
             box-shadow: 0 10px 30px rgba(89, 32, 86, 0.1);
             overflow: hidden;
             position: relative;
             padding-bottom: 40px;
-        }
-        
-        .floral-border-top, .floral-border-bottom {
-            width: 100%;
-            height: 100px;
-            background-image: url('/api/placeholder/600/100');
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
-        
-        .floral-border-top {
-            border-radius: 30px 30px 0 0;
-        }
-        
-        .floral-border-bottom {
-            border-radius: 0 0 30px 30px;
-            margin-top: auto;
         }
         
         .card-content {
@@ -73,13 +57,19 @@
             position: relative;
             margin-top: 20px;
             margin-bottom: 20px;
+            /* Added background gradient for better text readability */
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 20px;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .golden-arch {
             position: absolute;
             top: 0;
-            left: 10%;
-            width: 80%;
+            left: 15%; /* Adjusted from 10% to pull in from edges */
+            width: 70%; /* Adjusted from 80% to ensure content is inside */
             height: 100%;
             border: 2px solid #d4bc6a;
             border-bottom: none;
@@ -122,6 +112,9 @@
             z-index: 1;
             opacity: 0;
             animation: fadeUp 1.5s forwards 1s;
+            /* Added padding to ensure text stays inside golden arch */
+            padding-left: 20px;
+            padding-right: 20px;
         }
         
         .couple-names {
@@ -160,6 +153,8 @@
             z-index: 1;
             opacity: 0;
             animation: fadeIn 1.5s forwards 2s;
+            /* Added padding to keep text inside arch */
+            padding: 0 15px;
         }
         
         .initials {
@@ -188,6 +183,10 @@
             margin: 30px 0;
             position: relative;
             z-index: 1;
+            /* Added width constraint to ensure content stays inside the golden arch */
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .event-item {
@@ -373,28 +372,6 @@
             }
         }
         
-        @keyframes floatingFlowers {
-            0% {
-                transform: translateY(0) rotate(0deg);
-            }
-            50% {
-                transform: translateY(-5px) rotate(5deg);
-            }
-            100% {
-                transform: translateY(0) rotate(0deg);
-            }
-        }
-        
-        .floating-flower {
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            background-size: contain;
-            background-repeat: no-repeat;
-            z-index: 0;
-            animation: floatingFlowers 3s ease-in-out infinite;
-        }
-        
         @media (max-width: 768px) {
             .invitation-card {
                 width: 95%;
@@ -410,6 +387,7 @@
             
             .card-content {
                 padding: 15px 25px;
+                width: 85%;
             }
             
             .event-item {
@@ -431,6 +409,11 @@
             .timeline-connector {
                 display: none;
             }
+            
+            .golden-arch {
+                left: 20%;
+                width: 60%;
+            }
         }
     </style>
 </head>
@@ -439,7 +422,6 @@
         <!-- Page 1: Save the Date -->
         <div class="page active" id="page1">
             <div class="invitation-card">
-                <div class="floral-border-top"></div>
                 <div class="card-content">
                     <div class="golden-arch"></div>
                     <h1>Save the Date</h1>
@@ -447,14 +429,12 @@
                     <div class="couple-names">Ashwitha & Dhiraj</div>
                     <div class="date-time">09 - 05 - 2025</div>
                 </div>
-                <div class="floral-border-bottom"></div>
             </div>
         </div>
         
         <!-- Page 2: Wedding Invitation -->
         <div class="page" id="page2">
             <div class="invitation-card">
-                <div class="floral-border-top"></div>
                 <div class="card-content">
                     <div class="golden-arch"></div>
                     <div class="initials">A | D</div>
@@ -475,14 +455,12 @@
                         <div>NELLIKATTE, UDUPI</div>
                     </div>
                 </div>
-                <div class="floral-border-bottom"></div>
             </div>
         </div>
         
         <!-- Page 3: Event Timeline -->
         <div class="page" id="page3">
             <div class="invitation-card">
-                <div class="floral-border-top"></div>
                 <div class="card-content">
                     <div class="golden-arch"></div>
                     <div class="initials">A | D</div>
@@ -529,7 +507,6 @@
                         IS THE GREATEST GIFT OF ALL
                     </div>
                 </div>
-                <div class="floral-border-bottom"></div>
             </div>
         </div>
         
@@ -586,19 +563,6 @@
             
             // Initial state
             prevBtn.disabled = true;
-            
-            // Add floating flower animations
-            const flowers = 10;
-            const container = document.querySelector('.page-container');
-            
-            for (let i = 0; i < flowers; i++) {
-                const flower = document.createElement('div');
-                flower.classList.add('floating-flower');
-                flower.style.left = Math.random() * 100 + '%';
-                flower.style.top = Math.random() * 100 + '%';
-                flower.style.animationDelay = (Math.random() * 2) + 's';
-                container.appendChild(flower);
-            }
         });
     </script>
 </body>
