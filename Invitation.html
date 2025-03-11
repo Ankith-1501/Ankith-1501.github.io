@@ -3,73 +3,603 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wedding Invitation</title>
+    <title>Ashwitha & Dhiraj Wedding Invitation</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&display=swap');
-        body {
-            background: #f4e9dc;
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&family=Cormorant+Garamond:wght@400;600&display=swap');
+        
+        * {
             margin: 0;
             padding: 0;
-            text-align: center;
-            font-family: 'Playfair Display', serif;
+            box-sizing: border-box;
         }
-        .invitation {
-            max-width: 600px;
-            margin: auto;
-            padding: 20px;
-            background: #fff;
-            border-radius: 10px;
-            border: 5px solid #8B5E3B;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            position: relative;
-            opacity: 0;
-            animation: fadeIn 2s ease-in forwards;
+        
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            background-color: #f8f5ff;
+            color: #592056;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-        .header-title {
-            font-size: 3em;
-            font-family: 'Great Vibes', cursive;
-            color: #8B5E3B;
-            animation: fadeSlideIn 2s ease-in-out;
-        }
-        .subtext {
-            font-size: 1.4em;
-            color: #5A3E2B;
-            font-weight: bold;
-            animation: fadeIn 3s ease-in-out;
-        }
-        .details {
-            font-size: 1.2em;
-            color: #333;
-            animation: fadeIn 4s ease-in-out;
-        }
-        .image-container {
+        
+        .page-container {
             width: 100%;
-            max-width: 500px;
+            max-width: 800px;
+            min-height: 100vh;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .invitation-card {
+            width: 90%;
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 30px 30px 30px 30px;
+            border: 1px solid #d4c4e9;
+            box-shadow: 0 10px 30px rgba(89, 32, 86, 0.1);
+            overflow: hidden;
+            position: relative;
+            padding-bottom: 40px;
+        }
+        
+        .floral-border-top, .floral-border-bottom {
+            width: 100%;
+            height: 100px;
+            background-image: url('/api/placeholder/600/100');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .floral-border-top {
+            border-radius: 30px 30px 0 0;
+        }
+        
+        .floral-border-bottom {
+            border-radius: 0 0 30px 30px;
+            margin-top: auto;
+        }
+        
+        .card-content {
+            padding: 20px 40px;
+            text-align: center;
+            position: relative;
             margin-top: 20px;
-            border-radius: 10px;
-            animation: zoomIn 2s ease-in-out;
+            margin-bottom: 20px;
         }
+        
+        .golden-arch {
+            position: absolute;
+            top: 0;
+            left: 10%;
+            width: 80%;
+            height: 100%;
+            border: 2px solid #d4bc6a;
+            border-bottom: none;
+            border-radius: 150px 150px 0 0;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 4rem;
+            font-weight: normal;
+            color: #8a1253;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+            opacity: 0;
+            animation: fadeUp 1.5s forwards 0.5s;
+        }
+        
+        h2 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.5rem;
+            font-weight: normal;
+            color: #8a1253;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+            opacity: 0;
+            animation: fadeUp 1.5s forwards 0.7s;
+        }
+        
+        h3 {
+            font-family: 'Playfair Display', serif;
+            text-transform: uppercase;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+            opacity: 0;
+            animation: fadeUp 1.5s forwards 1s;
+        }
+        
+        .couple-names {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.5rem;
+            color: #8a1253;
+            margin: 15px 0;
+            position: relative;
+            z-index: 1;
+            opacity: 0;
+            animation: fadeIn 1.5s forwards 1.2s;
+        }
+        
+        .and {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            margin: 10px 0;
+            position: relative;
+            z-index: 1;
+            opacity: 0;
+            animation: fadeIn 1.5s forwards 1.5s;
+        }
+        
+        .date-time {
+            margin: 20px 0;
+            position: relative;
+            z-index: 1;
+            opacity: 0;
+            animation: fadeIn 1.5s forwards 1.8s;
+        }
+        
+        .venue {
+            margin: 20px 0;
+            font-size: 1.1rem;
+            position: relative;
+            z-index: 1;
+            opacity: 0;
+            animation: fadeIn 1.5s forwards 2s;
+        }
+        
+        .initials {
+            font-family: 'Great Vibes', cursive;
+            font-size: 1.8rem;
+            color: #8a1253;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+            opacity: 0;
+            animation: fadeIn 1.5s forwards 0.5s;
+        }
+        
+        .divider {
+            width: 80px;
+            height: 2px;
+            background-color: #8a1253;
+            margin: 15px auto;
+            position: relative;
+            z-index: 1;
+            opacity: 0;
+            animation: grow 1.5s forwards 1.7s;
+        }
+        
+        .event-timeline {
+            margin: 30px 0;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .event-item {
+            display: flex;
+            align-items: center;
+            margin: 30px 0;
+            opacity: 0;
+            animation: fadeInRight 1.5s forwards;
+        }
+        
+        .event-item:nth-child(1) {
+            animation-delay: 0.5s;
+        }
+        
+        .event-item:nth-child(2) {
+            animation-delay: 1s;
+        }
+        
+        .event-item:nth-child(3) {
+            animation-delay: 1.5s;
+        }
+        
+        .event-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 20px;
+            flex-shrink: 0;
+            box-shadow: 0 5px 15px rgba(89, 32, 86, 0.2);
+        }
+        
+        .event-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .event-details {
+            text-align: left;
+            flex: 1;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            hyphens: auto;
+        }
+        
+        .event-name {
+            font-family: 'Great Vibes', cursive;
+            font-size: 1.8rem;
+            color: #8a1253;
+            margin-bottom: 5px;
+        }
+        
+        .event-date, .event-venue {
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+        
+        .timeline-connector {
+            position: absolute;
+            left: 30px;
+            top: 60px;
+            width: 2px;
+            height: calc(100% - 120px);
+            background-color: #d4c4e9;
+            z-index: 0;
+        }
+        
+        .footer-message {
+            margin: 30px 0 20px;
+            font-size: 1.1rem;
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+            opacity: 0;
+            animation: fadeIn 1.5s forwards 2.5s;
+        }
+        
+        .navigation {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            position: relative;
+            z-index: 100;
+        }
+        
+        .nav-btn {
+            background-color: #8a1253;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 20px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(89, 32, 86, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .nav-btn:hover {
+            background-color: #6a0e40;
+            transform: translateY(-2px);
+        }
+        
+        .page {
+            display: none;
+            width: 100%;
+        }
+        
+        .page.active {
+            display: block;
+            animation: fadePage 1s forwards;
+        }
+        
+        .page-indicator {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        
+        .indicator {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #d4c4e9;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+        
+        .indicator.active {
+            background-color: #8a1253;
+        }
+        
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
-        @keyframes fadeSlideIn {
-            from { transform: translateY(-20px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+        
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
-        @keyframes zoomIn {
-            from { transform: scale(0.8); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
+        
+        @keyframes grow {
+            from {
+                opacity: 0;
+                width: 0;
+            }
+            to {
+                opacity: 1;
+                width: 80px;
+            }
+        }
+        
+        @keyframes fadePage {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes floatingFlowers {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-5px) rotate(5deg);
+            }
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+        }
+        
+        .floating-flower {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            z-index: 0;
+            animation: floatingFlowers 3s ease-in-out infinite;
+        }
+        
+        @media (max-width: 768px) {
+            .invitation-card {
+                width: 95%;
+            }
+            
+            h1 {
+                font-size: 3rem;
+            }
+            
+            h2, .couple-names {
+                font-size: 2rem;
+            }
+            
+            .card-content {
+                padding: 15px 25px;
+            }
+            
+            .event-item {
+                flex-direction: column;
+                text-align: center;
+                margin: 40px 0;
+            }
+            
+            .event-icon {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+            
+            .event-details {
+                text-align: center;
+                width: 100%;
+            }
+            
+            .timeline-connector {
+                display: none;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="invitation">
-        <h1 class="header-title">Save the Date</h1>
-        <p class="subtext">For the Wedding of</p>
-        <h2 class="header-title">Ashwitha & Dhiraj</h2>
-        <p class="details">09 - 05 - 2025</p>
-        <img src="image.png" alt="Invitation Image" class="image-container">
+    <div class="page-container">
+        <!-- Page 1: Save the Date -->
+        <div class="page active" id="page1">
+            <div class="invitation-card">
+                <div class="floral-border-top"></div>
+                <div class="card-content">
+                    <div class="golden-arch"></div>
+                    <h1>Save the Date</h1>
+                    <h3>FOR THE WEDDING OF</h3>
+                    <div class="couple-names">Ashwitha & Dhiraj</div>
+                    <div class="date-time">09 - 05 - 2025</div>
+                </div>
+                <div class="floral-border-bottom"></div>
+            </div>
+        </div>
+        
+        <!-- Page 2: Wedding Invitation -->
+        <div class="page" id="page2">
+            <div class="invitation-card">
+                <div class="floral-border-top"></div>
+                <div class="card-content">
+                    <div class="golden-arch"></div>
+                    <div class="initials">A | D</div>
+                    <h3>TO HAVE AND TO HOLD, FROM THIS DAY FORWARD...</h3>
+                    <h3>WE</h3>
+                    <div class="couple-names">Ashwitha Shetty</div>
+                    <div class="divider"></div>
+                    <div class="and">AND</div>
+                    <div class="divider"></div>
+                    <div class="couple-names">Dhiraj Shetty</div>
+                    <h3>INVITE YOU TO CELEBRATE OUR WEDDING</h3>
+                    <div class="divider"></div>
+                    <div class="venue">
+                        <div>ON THE 09th OF MAY, 2025</div>
+                        <div>AT 12 O'CLOCK NOON</div>
+                        <div style="margin-top: 10px;">GRAMEENA BANTARA SABHA</div>
+                        <div>BHAYANA KUNTALA NAGARA,</div>
+                        <div>NELLIKATTE, UDUPI</div>
+                    </div>
+                </div>
+                <div class="floral-border-bottom"></div>
+            </div>
+        </div>
+        
+        <!-- Page 3: Event Timeline -->
+        <div class="page" id="page3">
+            <div class="invitation-card">
+                <div class="floral-border-top"></div>
+                <div class="card-content">
+                    <div class="golden-arch"></div>
+                    <div class="initials">A | D</div>
+                    
+                    <div class="event-timeline">
+                        <div class="timeline-connector"></div>
+                        
+                        <div class="event-item">
+                            <div class="event-icon">
+                                <img src="/api/placeholder/60/60" alt="Mehendi ceremony">
+                            </div>
+                            <div class="event-details">
+                                <div class="event-name">Mehendi</div>
+                                <div class="event-date">06 MAY • 12 PM</div>
+                                <div class="event-venue">VENUE: PATINAJS MAHAL,<br>POOJAMANE, UDUPI</div>
+                            </div>
+                        </div>
+                        
+                        <div class="event-item">
+                            <div class="event-icon">
+                                <img src="/api/placeholder/60/60" alt="Wedding ceremony">
+                            </div>
+                            <div class="event-details">
+                                <div class="event-name">Wedding</div>
+                                <div class="event-date">09 MAY • 12 PM</div>
+                                <div class="event-venue">VENUE: GRAMEENA BANTARA SABHA<br>BHAYANA KUNTALA NAGARA,<br>NELLIKATTE, UDUPI</div>
+                            </div>
+                        </div>
+                        
+                        <div class="event-item">
+                            <div class="event-icon">
+                                <img src="/api/placeholder/60/60" alt="Reception">
+                            </div>
+                            <div class="event-details">
+                                <div class="event-name">Reception</div>
+                                <div class="event-date">10 MAY • 12:00 PM</div>
+                                <div class="event-venue">VENUE: SHESHASHAYANA WEDDING HALL<br>PERDOOR, UDUPI</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-message">
+                        THE PRESENCE OF OUR FRIENDS AND FAMILY<br>
+                        IS THE GREATEST GIFT OF ALL
+                    </div>
+                </div>
+                <div class="floral-border-bottom"></div>
+            </div>
+        </div>
+        
+        <div class="navigation">
+            <button class="nav-btn" id="prev">Previous</button>
+            <button class="nav-btn" id="next">Next</button>
+        </div>
+        
+        <div class="page-indicator">
+            <div class="indicator active" data-page="1"></div>
+            <div class="indicator" data-page="2"></div>
+            <div class="indicator" data-page="3"></div>
+        </div>
     </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const pages = document.querySelectorAll('.page');
+            const prevBtn = document.getElementById('prev');
+            const nextBtn = document.getElementById('next');
+            const indicators = document.querySelectorAll('.indicator');
+            let currentPage = 1;
+            
+            function showPage(pageNum) {
+                pages.forEach(page => page.classList.remove('active'));
+                document.getElementById('page' + pageNum).classList.add('active');
+                
+                indicators.forEach(ind => ind.classList.remove('active'));
+                document.querySelector(`.indicator[data-page="${pageNum}"]`).classList.add('active');
+                
+                currentPage = pageNum;
+                
+                prevBtn.disabled = currentPage === 1;
+                nextBtn.disabled = currentPage === pages.length;
+            }
+            
+            prevBtn.addEventListener('click', function() {
+                if (currentPage > 1) {
+                    showPage(currentPage - 1);
+                }
+            });
+            
+            nextBtn.addEventListener('click', function() {
+                if (currentPage < pages.length) {
+                    showPage(currentPage + 1);
+                }
+            });
+            
+            indicators.forEach(indicator => {
+                indicator.addEventListener('click', function() {
+                    showPage(parseInt(this.dataset.page));
+                });
+            });
+            
+            // Initial state
+            prevBtn.disabled = true;
+            
+            // Add floating flower animations
+            const flowers = 10;
+            const container = document.querySelector('.page-container');
+            
+            for (let i = 0; i < flowers; i++) {
+                const flower = document.createElement('div');
+                flower.classList.add('floating-flower');
+                flower.style.left = Math.random() * 100 + '%';
+                flower.style.top = Math.random() * 100 + '%';
+                flower.style.animationDelay = (Math.random() * 2) + 's';
+                container.appendChild(flower);
+            }
+        });
+    </script>
 </body>
 </html>
