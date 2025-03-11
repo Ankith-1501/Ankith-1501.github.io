@@ -819,7 +819,7 @@ main {
 
 
 /**
- * Skills - Modern Style with Vegas Gold Theme
+ * Skills - Modern Style
  */
 
  .skills-title {
@@ -827,7 +827,6 @@ main {
   text-align: center;
   font-size: var(--fs-4);
   font-weight: var(--fw-600);
-  color: var(--vegas-gold); /* Using Vegas Gold for the title */
 }
 
 .skills-grid {
@@ -838,7 +837,7 @@ main {
 }
 
 .skill-category {
-  background: var(--gray); /* Gray background for the cards */
+  background: var(--jet);
   padding: 15px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -846,22 +845,16 @@ main {
 
 .skill-category h5 {
   margin-bottom: 10px;
-  color: var(--vegas-gold); /* Vegas Gold for headers */
+  color: var(--text-gradient-yellow);
   font-size: var(--fs-5);
   font-weight: var(--fw-500);
 }
 
 .skill-category p {
-  color: var(--light-gray); /* Subtle gray for the text content */
+  color: var(--light-gray);
   font-size: var(--fs-7);
   line-height: 1.6;
 }
-
-.skill-category:hover {
-  transform: scale(1.02); /* Slight hover effect for interactivity */
-  transition: transform 0.2s ease-in-out;
-}
-
 
 /*-----------------------------------*\
   #CERTIFICATIONS
